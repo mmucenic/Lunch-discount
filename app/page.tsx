@@ -1,12 +1,12 @@
 import { curatedDeals } from '@/app/data/deals'
-import { scrapeCanaryWharfOffers } from '@/app/lib/scraper'
+import { scrapeAllSources } from '@/app/lib/scraper'
 import { DealsClient } from '@/app/components/DealsClient'
 
 export const revalidate = 3600 // Refresh scraped data every hour
 
 async function getDeals() {
   try {
-    const scrapedDeals = await scrapeCanaryWharfOffers()
+    const scrapedDeals = await scrapeAllSources()
     return [...curatedDeals, ...scrapedDeals]
   } catch {
     return curatedDeals
@@ -21,13 +21,13 @@ export default async function Home() {
       {/* Header */}
       <div className="bg-white border-b border-gray-100 px-4 pt-6 pb-4">
         <div className="flex items-center gap-3">
-          <span className="text-3xl">🥙</span>
+          <span className="text-3xl">£</span>
           <div>
             <h1 className="text-xl font-bold text-gray-900">
-              Canary Wharf Lunch Deals
+              Cheap is Cheap
             </h1>
             <p className="text-sm text-gray-500">
-              Discounts &amp; codes near you
+              Canary Wharf lunch deals &amp; codes
             </p>
           </div>
         </div>

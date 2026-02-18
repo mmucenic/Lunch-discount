@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server'
 import { curatedDeals } from '@/app/data/deals'
-import { scrapeCanaryWharfOffers } from '@/app/lib/scraper'
+import { scrapeAllSources } from '@/app/lib/scraper'
 
 export const revalidate = 3600 // Revalidate every hour
 
 export async function GET() {
   try {
-    const scrapedDeals = await scrapeCanaryWharfOffers()
+    const scrapedDeals = await scrapeAllSources()
     const allDeals = [...curatedDeals, ...scrapedDeals]
 
     return NextResponse.json(allDeals, {
