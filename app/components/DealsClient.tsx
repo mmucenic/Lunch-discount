@@ -34,6 +34,7 @@ function dealsMatchFilter(deal: Deal, filters: Filters): boolean {
       deal.validDays.includes('everyday')
     if (!dayMatch) return false
   }
+  if (filters.hideRequiresApp && deal.requiresApp) return false
   return true
 }
 
@@ -43,6 +44,7 @@ export function DealsClient({ initialDeals }: DealsClientProps) {
     dealType: 'all',
     priceRange: 'all',
     day: getTodayAsDayOfWeek(),
+    hideRequiresApp: false,
   })
   const [search, setSearch] = useState('')
 
@@ -97,6 +99,7 @@ export function DealsClient({ initialDeals }: DealsClientProps) {
                   dealType: 'all',
                   priceRange: 'all',
                   day: 'all',
+                  hideRequiresApp: false,
                 })
               }
               className="mt-4 text-sm text-blue-500 hover:text-blue-700 underline"

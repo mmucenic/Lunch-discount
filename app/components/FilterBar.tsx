@@ -87,9 +87,24 @@ export function FilterBar({ filters, onChange, resultCount }: FilterBarProps) {
         value={filters.dealType}
         onChange={(dealType) => onChange({ ...filters, dealType })}
       />
-      <p className="text-xs text-gray-400 pt-0.5">
-        {resultCount} deal{resultCount !== 1 ? 's' : ''} found
-      </p>
+      <div className="flex items-center justify-between pt-0.5">
+        <p className="text-xs text-gray-400">
+          {resultCount} deal{resultCount !== 1 ? 's' : ''} found
+        </p>
+        <button
+          onClick={() =>
+            onChange({ ...filters, hideRequiresApp: !filters.hideRequiresApp })
+          }
+          className={`flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border transition-all duration-150 ${
+            filters.hideRequiresApp
+              ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm'
+              : 'bg-white text-gray-500 border-gray-200 hover:border-emerald-400 hover:text-emerald-600'
+          }`}
+        >
+          <span>{filters.hideRequiresApp ? '✓' : '📱'}</span>
+          No app needed
+        </button>
+      </div>
     </div>
   )
 }

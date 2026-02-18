@@ -52,4 +52,5 @@ export interface Filters {
   dealType: DealType | 'all'
   priceRange: PriceRange | 'all'
   day: DayOfWeek | 'all'
+  hideRequiresApp: boolean
 }
