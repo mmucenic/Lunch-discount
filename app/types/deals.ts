@@ -53,4 +53,5 @@ export interface Filters {
   priceRange: PriceRange | 'all'
   day: DayOfWeek | 'all'
   hideRequiresApp: boolean
+  showNewOnly: boolean
 }

@@ -4,9 +4,14 @@ import { Deal } from '@/app/types/deals'
 const NEWS_API = 'https://canarywharf.com/wp-json/wp/v2/news'
 const CW_BASE = 'https://canarywharf.com'
 
-// Must mention both food AND a deal/offer concept to be included
+// Require food + deal keywords — but the deal keyword must appear in the TITLE
+// (not just the excerpt) so we don't pick up generic "Top 10" roundup articles
 const FOOD_RE = /restaurant|dining|lunch|dinner|brunch|supper|café|cafe|bar|food|chef|menu|eat out/i
-const DEAL_RE = /offer|discount|deal|save|voucher|promo|free\s+\w|%\s*off|£\d+\s*off|set\s+menu|prix\s+fixe/i
+const DEAL_TITLE_RE = /offer|discount|deal|save|voucher|promo|%\s*off|£\d+\s*off|set\s+menu|prix\s+fixe/i
+
+// Generic roundup article titles that are never specific restaurant deals
+const ROUNDUP_RE =
+  /\btop\s+\d+\b|\bthings to (do|see)\b|\bguide\b|\bseason\b|\bfestive\b|\bhalloween\b|\beaster\b|\bhalf.term\b|\bsummer\b|\bwinter\b|\bspring\b|\bautumn\b|\bultimate\b|\bwhat to\b|\bdog.friendly\b|\bnature\b/i
 
 // Strip HTML tags and decode common HTML entities
 function stripHtml(html: string): string {
@@ -59,12 +64,15 @@ export async function scrapeCanaryWharf(): Promise<Deal[]> {
     const title = stripHtml(post.title.rendered)
     const excerpt = stripHtml(post.excerpt.rendered)
 
+    // Skip generic roundup / lifestyle articles
+    if (ROUNDUP_RE.test(title)) return
+    // Require BOTH a food keyword AND a deal keyword in the title itself
+    // so we only pick up actual restaurant deal announcements, not general articles
+    if (!DEAL_TITLE_RE.test(title) || !FOOD_RE.test(title)) return
     const combined = title + ' ' + excerpt
-    // Require both a food mention AND a deal/offer mention
-    if (!FOOD_RE.test(combined) || !DEAL_RE.test(combined)) return
 
     // Infer discount label from text
-    const combined2 = title + ' ' + excerpt
+    const combined2 = combined
     const pctMatch = combined2.match(/(\d+)%\s*off/i)
     const freeMatch = /\bfree\s+(item|meal|drink|food|dessert|delivery|dish)\b/i.test(combined2)
     const setMenuMatch = /set (lunch|menu)|prix fixe|\bfrom £\d+/i.test(combined2)

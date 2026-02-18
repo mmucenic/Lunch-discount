@@ -37,6 +37,7 @@ function dealsMatchFilter(deal: Deal, filters: Filters): boolean {
     if (!dayMatch) return false
   }
   if (filters.hideRequiresApp && deal.requiresApp) return false
+  if (filters.showNewOnly && deal.source !== 'scraped') return false
   return true
 }
 
@@ -49,6 +50,7 @@ export function DealsClient({ initialDeals }: DealsClientProps) {
     priceRange: 'all',
     day: getTodayAsDayOfWeek(),
     hideRequiresApp: false,
+    showNewOnly: false,
   })
   const [search, setSearch] = useState('')
 
@@ -119,6 +121,7 @@ export function DealsClient({ initialDeals }: DealsClientProps) {
                   priceRange: 'all',
                   day: 'all',
                   hideRequiresApp: false,
+                  showNewOnly: false,
                 })
               }
               className="mt-4 text-sm text-blue-500 hover:text-blue-700 underline"
@@ -135,7 +138,7 @@ export function DealsClient({ initialDeals }: DealsClientProps) {
           Deals updated regularly · Always verify at the restaurant before ordering
         </p>
         <a
-          href="https://www.canarywharf.com/whats-on/offers-promotions/"
+          href="https://canarywharf.com/eating-drinking/offers-promotions/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-xs text-blue-400 hover:text-blue-600 mt-1 block"

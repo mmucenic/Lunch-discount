@@ -91,19 +91,34 @@ export function FilterBar({ filters, onChange, resultCount }: FilterBarProps) {
         <p className="text-xs text-gray-400">
           {resultCount} deal{resultCount !== 1 ? 's' : ''} found
         </p>
-        <button
-          onClick={() =>
-            onChange({ ...filters, hideRequiresApp: !filters.hideRequiresApp })
-          }
-          className={`flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border transition-all duration-150 ${
-            filters.hideRequiresApp
-              ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm'
-              : 'bg-white text-gray-500 border-gray-200 hover:border-emerald-400 hover:text-emerald-600'
-          }`}
-        >
-          <span>{filters.hideRequiresApp ? '✓' : '📱'}</span>
-          No app needed
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() =>
+              onChange({ ...filters, showNewOnly: !filters.showNewOnly })
+            }
+            className={`flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border transition-all duration-150 ${
+              filters.showNewOnly
+                ? 'bg-violet-600 text-white border-violet-600 shadow-sm'
+                : 'bg-white text-gray-500 border-gray-200 hover:border-violet-400 hover:text-violet-600'
+            }`}
+          >
+            <span>{filters.showNewOnly ? '✓' : '✨'}</span>
+            New
+          </button>
+          <button
+            onClick={() =>
+              onChange({ ...filters, hideRequiresApp: !filters.hideRequiresApp })
+            }
+            className={`flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border transition-all duration-150 ${
+              filters.hideRequiresApp
+                ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm'
+                : 'bg-white text-gray-500 border-gray-200 hover:border-emerald-400 hover:text-emerald-600'
+            }`}
+          >
+            <span>{filters.hideRequiresApp ? '✓' : '📱'}</span>
+            No app needed
+          </button>
+        </div>
       </div>
     </div>
   )
