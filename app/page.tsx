@@ -1,20 +1,13 @@
 import { curatedDeals } from '@/app/data/deals'
-import { scrapeAllSources } from '@/app/lib/scraper'
 import { DealsClient } from '@/app/components/DealsClient'
+import type { Deal } from '@/app/types/deals'
+// Updated hourly by GitHub Actions (scripts/scrape.ts → .github/workflows/scrape.yml)
+import scrapedDealsJson from '@/app/data/scraped-deals.json'
 
-export const revalidate = 3600 // Refresh scraped data every hour
-
-async function getDeals() {
-  try {
-    const scrapedDeals = await scrapeAllSources()
-    return [...curatedDeals, ...scrapedDeals]
-  } catch {
-    return curatedDeals
-  }
-}
+const scrapedDeals = scrapedDealsJson as Deal[]
 
 export default async function Home() {
-  const deals = await getDeals()
+  const deals = [...curatedDeals, ...scrapedDeals]
 
   return (
     <main className="min-h-screen bg-gray-50 max-w-lg mx-auto">
