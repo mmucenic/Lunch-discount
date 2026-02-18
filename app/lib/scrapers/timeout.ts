@@ -1,10 +1,10 @@
 import * as cheerio from 'cheerio'
 import { Deal } from '@/app/types/deals'
 
-// Time Out's best cheap eats and lunch deal coverage for London
+// Time Out's best cheap eats and food coverage for London
 const URLS = [
-  'https://www.timeout.com/london/restaurants/the-best-cheap-eats-in-london',
-  'https://www.timeout.com/london/restaurants/lunch-deals-london',
+  'https://www.timeout.com/london/food-drink/londons-best-cheap-eats',
+  'https://www.timeout.com/london/food-and-drink/londons-best-sunday-lunches',
 ]
 
 const CANARY_WHARF_KEYWORDS =

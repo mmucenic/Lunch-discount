@@ -2,7 +2,7 @@ import { Deal } from '@/app/types/deals'
 
 // ─── Bluesky public AppView API — no auth, no token, completely free ──────────
 // Docs: https://docs.bsky.app/docs/api/app-bsky-feed-search-posts
-const BSKY_API = 'https://public.api.bsky.app/xrpc'
+const BSKY_API = 'https://api.bsky.app/xrpc'
 
 // ─── Search queries to run ────────────────────────────────────────────────────
 // Each string is sent as a separate search; results are deduplicated by post URI.

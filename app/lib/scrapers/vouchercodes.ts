@@ -1,8 +1,8 @@
 import * as cheerio from 'cheerio'
 import { Deal } from '@/app/types/deals'
 
-// Target the food & drink / restaurants category listing
-const CATEGORY_URL = 'https://www.vouchercodes.co.uk/food-and-drink/restaurants/'
+// Target the restaurants vouchers listing
+const CATEGORY_URL = 'https://www.vouchercodes.co.uk/restaurant-vouchers.html'
 
 // Chains we know have Canary Wharf locations — filter to keep results relevant
 const CANARY_WHARF_CHAINS = [
@@ -34,45 +34,29 @@ export async function scrapeVoucherCodes(): Promise<Deal[]> {
     const $ = cheerio.load(await res.text())
     const deals: Deal[] = []
 
-    // Try multiple possible card container selectors
-    const containers = $(
-      [
-        '[data-component="voucher-card"]',
-        '.voucher-item',
-        '.offer-item',
-        '.merchant-card',
-        'li[class*="voucher"]',
-        'li[class*="offer"]',
-        'article[class*="voucher"]',
-        'article[class*="offer"]',
-        '.deal-card',
-      ].join(', ')
-    )
+    // Cards use class "flex-offer"; merchant name is in the logo img alt attribute,
+    // offer title is in the element with data-qa="el:offerTitle"
+    const containers = $('[class*="flex-offer"]')
 
     containers.each((i, el) => {
-      // Merchant / restaurant name
-      const merchant = $(el)
-        .find(
-          '[class*="merchant"], [class*="brand"], [class*="retailer"], h2, h3, h4'
-        )
-        .first()
-        .text()
-        .trim()
+      // Merchant name from logo alt text (e.g. "Wagamama Logo" → "Wagamama")
+      const logoAlt = $(el).find('img').first().attr('alt') ?? ''
+      const merchant = logoAlt.replace(/\s*Logo\s*$/i, '').trim()
 
       if (!merchant || !matchesChain(merchant)) return
 
-      // Deal description
+      // Deal description from the offer title element
       const description = $(el)
-        .find('[class*="description"], [class*="title"], [class*="offer"], p')
+        .find('[data-qa="el:offerTitle"], h3, h4')
         .first()
         .text()
         .trim()
 
-      // Discount code (hidden behind a button — may be in a data attribute)
-      const code =
-        $(el).find('[data-code], [class*="code"]').first().attr('data-code') ||
-        $(el).find('[class*="code"]').first().text().trim().replace(/\s+/g, '') ||
-        undefined
+      // Discount code in a lozenge-style span
+      const codeEl = $(el).find('[data-qa="el:lozenge"], [class*="lozenge"]').first().text().trim()
+      const code = codeEl && codeEl.toLowerCase() !== 'deal' && codeEl.toLowerCase() !== 'vip' && codeEl.length <= 20
+        ? codeEl
+        : undefined
 
       // Link
       const href = $(el).find('a').first().attr('href') || CATEGORY_URL
