@@ -26,5 +26,9 @@ export async function scrapeAllSources(): Promise<Deal[]> {
     scrapeBluesky(),
   ])
 
+  console.log(
+    `[scraper] canarywharf=${cwDeals.length} vouchercodes=${vcDeals.length} timeout=${toDeals.length} instagram=${igDeals.length} bluesky=${bskyDeals.length}`
+  )
+
   return [...cwDeals, ...vcDeals, ...toDeals, ...igDeals, ...bskyDeals]
 }

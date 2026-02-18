@@ -39,9 +39,17 @@ interface BskyPost {
 }
 
 // ─── Text → Deal ──────────────────────────────────────────────────────────────
-function postToDeal(post: BskyPost, fallbackName?: string, fallbackEmoji = '🦋'): Deal | null {
+// requireDealKeyword: true for author-feed posts (all posts from account, so
+// filter to deal-like ones); false for search results (query is already the filter)
+function postToDeal(
+  post: BskyPost,
+  fallbackName?: string,
+  fallbackEmoji = '🦋',
+  requireDealKeyword = true
+): Deal | null {
   const text = post.record?.text ?? ''
-  if (!text || !DEAL_RE.test(text)) return null
+  if (!text || text.length < 10) return null
+  if (requireDealKeyword && !DEAL_RE.test(text)) return null
 
   const pctMatch = text.match(PERCENT_RE)
   const poundMatch = text.match(POUND_RE)
@@ -83,22 +91,34 @@ function postToDeal(post: BskyPost, fallbackName?: string, fallbackEmoji = '🦋
 // ─── Fetch helpers ────────────────────────────────────────────────────────────
 async function searchPosts(query: string): Promise<BskyPost[]> {
   const url = `${BSKY_API}/app.bsky.feed.searchPosts?q=${encodeURIComponent(query)}&limit=20&sort=latest`
-  const res = await fetch(url, { next: { revalidate: 1800 } })
-  if (!res.ok) return []
-  const data = (await res.json()) as { posts?: BskyPost[] }
-  return data.posts ?? []
+  try {
+    const res = await fetch(url, { next: { revalidate: 1800 } })
+    if (!res.ok) {
+      console.error(`[bluesky] searchPosts HTTP ${res.status} for query: ${query}`)
+      return []
+    }
+    const data = (await res.json()) as { posts?: BskyPost[] }
+    return data.posts ?? []
+  } catch (err) {
+    console.error(`[bluesky] searchPosts fetch failed for query "${query}":`, err)
+    return []
+  }
 }
 
-async function fetchAuthorFeed(
-  handle: string
-): Promise<BskyPost[]> {
+async function fetchAuthorFeed(handle: string): Promise<BskyPost[]> {
   const url = `${BSKY_API}/app.bsky.feed.getAuthorFeed?actor=${encodeURIComponent(handle)}&limit=10&filter=posts_no_replies`
-  const res = await fetch(url, { next: { revalidate: 1800 } })
-  if (!res.ok) return []
-  const data = (await res.json()) as {
-    feed?: { post?: BskyPost }[]
+  try {
+    const res = await fetch(url, { next: { revalidate: 1800 } })
+    if (!res.ok) {
+      console.error(`[bluesky] getAuthorFeed HTTP ${res.status} for handle: ${handle}`)
+      return []
+    }
+    const data = (await res.json()) as { feed?: { post?: BskyPost }[] }
+    return (data.feed ?? []).map((f) => f.post!).filter(Boolean)
+  } catch (err) {
+    console.error(`[bluesky] getAuthorFeed fetch failed for "${handle}":`, err)
+    return []
   }
-  return (data.feed ?? []).map((f) => f.post!).filter(Boolean)
 }
 
 // ─── Main export ──────────────────────────────────────────────────────────────
@@ -113,27 +133,28 @@ export async function scrapeBluesky(): Promise<Deal[]> {
     const seenUris = new Set<string>()
     const deals: Deal[] = []
 
-    // Process search results (author info comes from the post itself)
+    // Search results: posts already matched the query, so no extra keyword filter
     for (const posts of searchResults) {
       for (const post of posts) {
         if (seenUris.has(post.uri)) continue
         seenUris.add(post.uri)
-        const deal = postToDeal(post)
+        const deal = postToDeal(post, undefined, '🦋', false)
         if (deal) deals.push(deal)
       }
     }
 
-    // Process known-handle feeds (override display name + emoji)
+    // Author feeds: we get ALL posts, so keep the keyword filter
     KNOWN_HANDLES.forEach(({ name, emoji }, idx) => {
       const posts = authorResults[idx] ?? []
       for (const post of posts) {
         if (seenUris.has(post.uri)) continue
         seenUris.add(post.uri)
-        const deal = postToDeal(post, name, emoji)
+        const deal = postToDeal(post, name, emoji, true)
         if (deal) deals.push(deal)
       }
     })
 
+    console.log(`[bluesky] scraped ${deals.length} deals`)
     return deals
   } catch (err) {
     console.error('[bluesky scraper]', err)
