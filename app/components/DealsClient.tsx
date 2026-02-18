@@ -1,9 +1,11 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useTransition } from 'react'
+import { useRouter } from 'next/navigation'
 import { Deal, Filters, DayOfWeek } from '@/app/types/deals'
 import { DealCard } from './DealCard'
 import { FilterBar } from './FilterBar'
+import { refreshDeals } from '@/app/actions'
 
 interface DealsClientProps {
   initialDeals: Deal[]
@@ -39,6 +41,8 @@ function dealsMatchFilter(deal: Deal, filters: Filters): boolean {
 }
 
 export function DealsClient({ initialDeals }: DealsClientProps) {
+  const router = useRouter()
+  const [isPending, startTransition] = useTransition()
   const [filters, setFilters] = useState<Filters>({
     cuisine: 'all',
     dealType: 'all',
@@ -47,6 +51,13 @@ export function DealsClient({ initialDeals }: DealsClientProps) {
     hideRequiresApp: false,
   })
   const [search, setSearch] = useState('')
+
+  function handleRefresh() {
+    startTransition(async () => {
+      await refreshDeals()
+      router.refresh()
+    })
+  }
 
   const filteredDeals = useMemo(() => {
     return initialDeals.filter((deal) => {
@@ -66,14 +77,22 @@ export function DealsClient({ initialDeals }: DealsClientProps) {
   return (
     <div>
       {/* Search */}
-      <div className="px-4 pt-4 pb-2">
+      <div className="px-4 pt-4 pb-2 flex gap-2">
         <input
           type="search"
           placeholder="Search restaurants or deals..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full text-sm rounded-xl border border-gray-200 bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="flex-1 text-sm rounded-xl border border-gray-200 bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
+        <button
+          onClick={handleRefresh}
+          disabled={isPending}
+          title="Refresh deals"
+          className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl border border-gray-200 bg-white text-gray-500 hover:text-blue-600 hover:border-blue-300 disabled:opacity-40 transition-all"
+        >
+          <span className={isPending ? 'animate-spin inline-block' : ''}>↻</span>
+        </button>
       </div>
 
       {/* Filters */}
