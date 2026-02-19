@@ -11,6 +11,7 @@ import { scrapeCanaryWharf } from '../app/lib/scrapers/canarywharf'
 import { scrapeVoucherCodes } from '../app/lib/scrapers/vouchercodes'
 import { scrapeTimeOut } from '../app/lib/scrapers/timeout'
 import { scrapeBluesky } from '../app/lib/scrapers/bluesky'
+import { scrapeWharfLife } from '../app/lib/scrapers/wharflife'
 // Instagram is omitted — requires login and will always return [] without credentials
 
 import { writeFileSync } from 'fs'
@@ -20,18 +21,19 @@ async function main() {
   const start = Date.now()
   console.log(`[scrape] starting at ${new Date().toISOString()}`)
 
-  const [cwDeals, vcDeals, toDeals, bskyDeals] = await Promise.all([
+  const [cwDeals, vcDeals, toDeals, bskyDeals, wlDeals] = await Promise.all([
     scrapeCanaryWharf(),
     scrapeVoucherCodes(),
     scrapeTimeOut(),
     scrapeBluesky(),
+    scrapeWharfLife(),
   ])
 
-  const deals = [...cwDeals, ...vcDeals, ...toDeals, ...bskyDeals]
+  const deals = [...cwDeals, ...vcDeals, ...toDeals, ...bskyDeals, ...wlDeals]
 
   console.log(
     `[scrape] done in ${Date.now() - start}ms — ` +
-    `cw=${cwDeals.length} vc=${vcDeals.length} to=${toDeals.length} bsky=${bskyDeals.length} ` +
+    `cw=${cwDeals.length} vc=${vcDeals.length} to=${toDeals.length} bsky=${bskyDeals.length} wl=${wlDeals.length} ` +
     `total=${deals.length}`
   )
 

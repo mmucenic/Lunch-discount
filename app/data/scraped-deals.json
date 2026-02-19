@@ -1,6 +1,6 @@
 [
   {
-    "id": "vc-6-1771458983779",
+    "id": "vc-6-1771459373687",
     "restaurant": "Zizzi",
     "tagline": "20% off Click and Collect Orders at Zizzi",
     "description": "20% off Click and Collect Orders at Zizzi",
@@ -33,5 +33,124 @@
     "location": "Canary Wharf",
     "source": "scraped",
     "imageEmoji": "🦋"
+  },
+  {
+    "id": "wl-2",
+    "restaurant": "Mama Li",
+    "tagline": "Latest store will feature sit-down dining, noodle soups and a bar as well as tak",
+    "description": "Latest store will feature sit-down dining, noodle soups and a bar as well as takeaway option as brand expands to Wood Wharf location  ADVERTISING FEATURE “It was while I was working in finance in the City that I had the idea,” said Catherine Hua, founder of Mama Continue reading “Mama Li brings Cant",
+    "dealType": "percentage",
+    "discountLabel": "New opening",
+    "cuisine": "other",
+    "priceRange": "££",
+    "validDays": [
+      "everyday"
+    ],
+    "url": "https://wharf-life.com/interviews/mama-li-brings-cantonese-roast-meats-to-canary-wharf-site/",
+    "location": "Canary Wharf",
+    "source": "scraped",
+    "imageEmoji": "🍱"
+  },
+  {
+    "id": "wl-17",
+    "restaurant": "Nora",
+    "tagline": "Canary Wharf’s latest restaurant launch comes from brothers Ozgur and Sidar Akyu",
+    "description": "Canary Wharf’s latest restaurant launch comes from brothers Ozgur and Sidar Akyuz, known for Café Beam, which has four branches in London  ADVERTISING FEATURE The past 12 months have been a thrilling time for the Canary Wharf hospitality scene, with many new venues opening their doors. Wood Continue",
+    "dealType": "percentage",
+    "discountLabel": "Special offer",
+    "cuisine": "other",
+    "priceRange": "££",
+    "validDays": [
+      "everyday"
+    ],
+    "url": "https://wharf-life.com/interviews/nora-opens-at-wood-wharf-offering-a-twist-on-turkish-cuisine/",
+    "location": "Canary Wharf",
+    "source": "scraped",
+    "imageEmoji": "🥙"
+  },
+  {
+    "id": "wl-36",
+    "restaurant": "Crate",
+    "tagline": "Hackney Wick brand expands to Canary Wharf by launching a new meeting point fill",
+    "description": "Hackney Wick brand expands to Canary Wharf by launching a new meeting point filled with craft beer, pizza and music opposite a sculpture of a whale  For 13 years, the beer, buzz, beats and pizza on paper at the White Building have shaped the heart of Hackney Continue reading “Crate opens second bran",
+    "dealType": "percentage",
+    "discountLabel": "New opening",
+    "cuisine": "other",
+    "priceRange": "££",
+    "validDays": [
+      "everyday"
+    ],
+    "url": "https://wharf-life.com/interviews/crate-opens-second-branch-with-bar-and-pizzeria-at-wood-wharf/",
+    "location": "Canary Wharf",
+    "source": "scraped",
+    "imageEmoji": "🍕"
+  },
+  {
+    "id": "wl-44",
+    "restaurant": "Amazing Grace",
+    "tagline": "K&G Hospitality set to open brand’s second on the lower levels of 12 Bank Street",
+    "description": "K&G Hospitality set to open brand’s second on the lower levels of 12 Bank Street on Eden Dock  When K&G Hospitality co-founders Vineet Kalra and Ricardo Guimaraes looked at the empty space on the ground floor of 12 Bank Street in Canary Wharf, they saw possibility. Continue reading “Amazing Grace br",
+    "dealType": "percentage",
+    "discountLabel": "New opening",
+    "cuisine": "other",
+    "priceRange": "££",
+    "validDays": [
+      "everyday"
+    ],
+    "url": "https://wharf-life.com/interviews/amazing-grace-brings-live-music-food-and-drink-to-canary-wharf/",
+    "location": "Canary Wharf",
+    "source": "scraped",
+    "imageEmoji": "🍽️"
+  },
+  {
+    "id": "wl-54",
+    "restaurant": "Barbarella",
+    "tagline": "The recently opened Italian restaurant overlooking Eden Dock goes big on interio",
+    "description": "The recently opened Italian restaurant overlooking Eden Dock goes big on interior design and pottery pooches but underperforms with its mains  At a glance, Barbarella is a lot of fun. Big Mamma Group, the company behind the chain that recently opened its latest branch in Canary Wharf, Continue readi",
+    "dealType": "percentage",
+    "discountLabel": "Review",
+    "cuisine": "other",
+    "priceRange": "££",
+    "validDays": [
+      "everyday"
+    ],
+    "url": "https://wharf-life.com/interviews/barbarella-review-big-mammas-canary-wharf-spot-is-a-mixed-bag/",
+    "location": "Canary Wharf",
+    "source": "scraped",
+    "imageEmoji": "🍕"
+  },
+  {
+    "id": "wl-55",
+    "restaurant": "The Lockdown Room",
+    "tagline": "Born in the pandemic at London City Island, the brand is set to open a branch at",
+    "description": "Born in the pandemic at London City Island, the brand is set to open a branch at Wood Wharf offering craft beer, smash burgers and live music  ADVERTISEMENT FEATURE A second branch of The Lockdown Room – a concept born out of the pandemic in 2021 at Continue reading “The Lockdown Room set to expand ",
+    "dealType": "percentage",
+    "discountLabel": "Special offer",
+    "cuisine": "other",
+    "priceRange": "££",
+    "validDays": [
+      "everyday"
+    ],
+    "url": "https://wharf-life.com/interviews/the-lockdown-room-set-to-expand-in-east-london-at-wood-wharf/",
+    "location": "Canary Wharf",
+    "source": "scraped",
+    "imageEmoji": "🍔"
+  },
+  {
+    "id": "wl-62",
+    "restaurant": "Café Seek",
+    "tagline": "Pinky Chan and Emily Leung are pouring their passion for food into a dream proje",
+    "description": "Pinky Chan and Emily Leung are pouring their passion for food into a dream project that will serve up cakes, savouries and beverages to Wharfers as Harbord Square in Canary Wharf buzzes with life  ADVERTISEMENT FEATURE The customers sipping slickly brewed matcha at Café Seek – following Continue rea",
+    "dealType": "percentage",
+    "discountLabel": "New opening",
+    "cuisine": "other",
+    "priceRange": "££",
+    "validDays": [
+      "everyday"
+    ],
+    "url": "https://wharf-life.com/interviews/cafe-seek-a-new-japanese-bakery-is-set-to-open-at-wood-wharf/",
+    "location": "Canary Wharf",
+    "source": "scraped",
+    "imageEmoji": "🍱"
   }
 ]
