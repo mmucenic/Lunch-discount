@@ -43,6 +43,8 @@ export interface Deal {
   requiresCard?: string
   url?: string
   location: string
+  lat?: number
+  lng?: number
   source: 'curated' | 'scraped'
   imageEmoji: string
 }

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Deal, DealType } from '@/app/types/deals'
+import { walkFromDB } from '@/app/lib/distance'
 
 const dealTypeLabels: Record<DealType, { label: string; colour: string }> = {
   '2for1': { label: '2 for 1', colour: 'bg-purple-100 text-purple-800' },
@@ -30,6 +31,10 @@ export function DealCard({ deal }: DealCardProps) {
   const [expanded, setExpanded] = useState(false)
 
   const { label, colour } = dealTypeLabels[deal.dealType]
+  const walk =
+    deal.lat != null && deal.lng != null
+      ? walkFromDB(deal.lat, deal.lng)
+      : null
 
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow duration-200">
@@ -45,6 +50,11 @@ export function DealCard({ deal }: DealCardProps) {
                 {deal.restaurant}
               </h3>
               <p className="text-xs text-gray-500 mt-0.5">{deal.location}</p>
+              {walk && (
+                <p className="text-xs text-gray-400 mt-0.5">
+                  {walk.distance} · ~{walk.walkMins} min walk from DB
+                </p>
+              )}
             </div>
           </div>
           <div className="flex flex-col items-end gap-1 shrink-0">

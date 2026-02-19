@@ -7,7 +7,13 @@ import scrapedDealsJson from '@/app/data/scraped-deals.json'
 const scrapedDeals = scrapedDealsJson as Deal[]
 
 export default async function Home() {
-  const deals = [...curatedDeals, ...scrapedDeals]
+  const now = new Date()
+  // Filter out scraped news items that have passed their 2-day expiry
+  const validScraped = scrapedDeals.filter((d) => {
+    if (!d.validUntil) return true
+    return new Date(d.validUntil) > now
+  })
+  const deals = [...curatedDeals, ...validScraped]
 
   return (
     <main className="min-h-screen bg-gray-50 max-w-lg mx-auto">
@@ -20,7 +26,7 @@ export default async function Home() {
               Cheap is Cheap
             </h1>
             <p className="text-sm text-gray-500">
-              Canary Wharf lunch deals &amp; codes
+              Canary Wharf &amp; Wood Wharf lunch deals
             </p>
           </div>
         </div>
