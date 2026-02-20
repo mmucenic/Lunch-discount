@@ -2,6 +2,10 @@
 export const DB_LAT = 51.5046
 export const DB_LNG = -0.0188
 
+// Generic fallback when a deal has no specific coordinates
+export const CW_CENTER_LAT = 51.5051
+export const CW_CENTER_LNG = -0.0201
+
 /** Great-circle distance in metres (Haversine formula). */
 function haversineMetres(lat1: number, lng1: number, lat2: number, lng2: number): number {
   const R = 6371000

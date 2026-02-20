@@ -4,6 +4,7 @@ import { scrapeVoucherCodes } from './scrapers/vouchercodes'
 import { scrapeTimeOut } from './scrapers/timeout'
 import { scrapeInstagram } from './scrapers/instagram'
 import { scrapeBluesky } from './scrapers/bluesky'
+import { scrapeFastCasual } from './scrapers/fastcasual'
 
 /**
  * Runs all scrapers in parallel and merges results.
@@ -16,19 +17,21 @@ import { scrapeBluesky } from './scrapers/bluesky'
  *   Time Out London    — editorial lunch deal coverage
  *   Instagram          — HTML best-effort; Graph API if INSTAGRAM_ACCESS_TOKEN set
  *   Bluesky            — public AppView search API, no credentials required
+ *   fastcasual         — direct website scraper for CW fast casual restaurants
  */
 export async function scrapeAllSources(): Promise<Deal[]> {
-  const [cwDeals, vcDeals, toDeals, igDeals, bskyDeals] = await Promise.all([
+  const [cwDeals, vcDeals, toDeals, igDeals, bskyDeals, fcDeals] = await Promise.all([
     scrapeCanaryWharf(),
     scrapeVoucherCodes(),
     scrapeTimeOut(),
     scrapeInstagram(),
     scrapeBluesky(),
+    scrapeFastCasual(),
   ])
 
   console.log(
-    `[scraper] canarywharf=${cwDeals.length} vouchercodes=${vcDeals.length} timeout=${toDeals.length} instagram=${igDeals.length} bluesky=${bskyDeals.length}`
+    `[scraper] canarywharf=${cwDeals.length} vouchercodes=${vcDeals.length} timeout=${toDeals.length} instagram=${igDeals.length} bluesky=${bskyDeals.length} fastcasual=${fcDeals.length}`
   )
 
-  return [...cwDeals, ...vcDeals, ...toDeals, ...igDeals, ...bskyDeals]
+  return [...cwDeals, ...vcDeals, ...toDeals, ...igDeals, ...bskyDeals, ...fcDeals]
 }

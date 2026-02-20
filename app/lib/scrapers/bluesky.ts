@@ -12,6 +12,22 @@ const SEARCH_QUERIES = [
   'canary wharf food truck',
   'E14 lunch deal',
   'canary wharf restaurant promo',
+  'wood wharf restaurant deal',
+  // Fast casual restaurant-specific queries
+  '"Farmer J" deal offer canary wharf',
+  '"Pilpel" deal canary wharf',
+  '"Pho" restaurant deal canary wharf',
+  '"Island Poke" deal canary wharf',
+  '"Coco di Mama" deal canary wharf',
+  '"Blank Street" coffee deal canary wharf',
+  '"Watchhouse" deal canary wharf',
+  '"Grind" coffee deal canary wharf',
+  '"Salad Project" canary wharf',
+  '"Atis" canary wharf deal',
+  '"Kung Fu Mama" wood wharf',
+  '"Mama Li" wood wharf',
+  '"Rice Guys" wood wharf',
+  '"Joe and the Juice" canary wharf',
 ]
 
 // ─── Known restaurant / food-brand Bluesky handles ───────────────────────────
@@ -20,6 +36,9 @@ const KNOWN_HANDLES: { handle: string; name: string; emoji: string }[] = [
   { handle: 'wagamama.bsky.social', name: 'Wagamama', emoji: '🍜' },
   { handle: 'leon.bsky.social', name: 'Leon', emoji: '🥗' },
   { handle: 'pretamanger.bsky.social', name: 'Pret a Manger', emoji: '☕' },
+  { handle: 'farmerjlondon.bsky.social', name: 'Farmer J', emoji: '🌾' },
+  { handle: 'pilpel.bsky.social', name: 'Pilpel', emoji: '🧆' },
+  { handle: 'islandpoke.bsky.social', name: 'Island Poke', emoji: '🐟' },
 ]
 
 // ─── Keyword detection ────────────────────────────────────────────────────────
