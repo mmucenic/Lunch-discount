@@ -17,6 +17,26 @@
     "imageEmoji": "🦋"
   },
   {
+    "id": "wl-0",
+    "restaurant": "Kitchen Jam",
+    "tagline": "East London music school believes playing together leads to greatest progress, w",
+    "description": "East London music school believes playing together leads to greatest progress, with co-founder Darryl Powis excited to grow the community  ADVERTISEMENT FEATURE “If you’re still looking at your hands, you’re not playing music,” said Darryl Powis, founder of Kitchen Jam. That sentence may sound a lit",
+    "dealType": "percentage",
+    "discountLabel": "Special offer",
+    "cuisine": "other",
+    "priceRange": "££",
+    "validDays": [
+      "everyday"
+    ],
+    "validUntil": "2026-02-27T11:39:40.000Z",
+    "url": "https://wharf-life.com/interviews/kitchen-jam-expands-to-canary-wharf-offering-group-guitar-lessons/",
+    "location": "Canary Wharf",
+    "lat": 51.5051,
+    "lng": -0.0201,
+    "source": "scraped",
+    "imageEmoji": "🍽️"
+  },
+  {
     "id": "fc-mama-li-1",
     "restaurant": "Mama Li",
     "tagline": "Website by LoyaltyApps Close Menu Order Menu About Locations",
