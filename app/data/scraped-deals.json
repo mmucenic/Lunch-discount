@@ -17,25 +17,6 @@
     "imageEmoji": "🦋"
   },
   {
-    "id": "fc-mama-li-1",
-    "restaurant": "Mama Li",
-    "tagline": "Website by LoyaltyApps Close Menu Order Menu About Locations",
-    "description": "Download the app or collect stamps to earn free items and exclusive rewards.",
-    "dealType": "percentage",
-    "discountLabel": "Loyalty rewards",
-    "cuisine": "asian",
-    "priceRange": "£",
-    "validDays": [
-      "everyday"
-    ],
-    "url": "https://mamali.co.uk",
-    "location": "Water St, Wood Wharf",
-    "lat": 51.5023,
-    "lng": -0.0161,
-    "source": "scraped",
-    "imageEmoji": "🍜"
-  },
-  {
     "id": "fc-grind-7",
     "restaurant": "Grind",
     "tagline": "Grind Coffee | Buy Coffee Online UK For Delivery From Grind Your Cart Your cart ",
