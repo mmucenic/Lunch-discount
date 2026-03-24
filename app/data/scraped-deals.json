@@ -1,22 +1,5 @@
 [
   {
-    "id": "bsky-at---did-plc-255mnfwdshslqtawmd6msqwb-app-bsky-feed-post-3m7cx2wca6t2b",
-    "restaurant": "MyLondon",
-    "tagline": "This family-run Ukrainian food truck brings comfort food, community spirit and u",
-    "description": "This family-run Ukrainian food truck brings comfort food, community spirit and unbeatable prices to Canary Wharf",
-    "dealType": "percentage",
-    "discountLabel": "Deal on Bluesky",
-    "cuisine": "other",
-    "priceRange": "££",
-    "validDays": [
-      "everyday"
-    ],
-    "url": "https://bsky.app/profile/itsmylondon.bsky.social/post/3m7cx2wca6t2b",
-    "location": "Canary Wharf",
-    "source": "scraped",
-    "imageEmoji": "🦋"
-  },
-  {
     "id": "fc-mama-li-1",
     "restaurant": "Mama Li",
     "tagline": "uk 2026 Mama LiWebsite by LoyaltyApps Close Menu Order Menu About Locations",
