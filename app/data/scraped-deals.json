@@ -1,5 +1,22 @@
 [
   {
+    "id": "bsky-at---did-plc-255mnfwdshslqtawmd6msqwb-app-bsky-feed-post-3m7cx2wca6t2b",
+    "restaurant": "MyLondon",
+    "tagline": "This family-run Ukrainian food truck brings comfort food, community spirit and u",
+    "description": "This family-run Ukrainian food truck brings comfort food, community spirit and unbeatable prices to Canary Wharf",
+    "dealType": "percentage",
+    "discountLabel": "Deal on Bluesky",
+    "cuisine": "other",
+    "priceRange": "££",
+    "validDays": [
+      "everyday"
+    ],
+    "url": "https://bsky.app/profile/itsmylondon.bsky.social/post/3m7cx2wca6t2b",
+    "location": "Canary Wharf",
+    "source": "scraped",
+    "imageEmoji": "🦋"
+  },
+  {
     "id": "fc-mama-li-1",
     "restaurant": "Mama Li",
     "tagline": "uk 2026 Mama LiWebsite by LoyaltyApps Close Menu Order Menu About Locations",
@@ -17,6 +34,25 @@
     "lng": -0.0161,
     "source": "scraped",
     "imageEmoji": "🍜"
+  },
+  {
+    "id": "fc-pho-4",
+    "restaurant": "Pho",
+    "tagline": "Search for your nearest Pho",
+    "description": "Get 50% off at this location.",
+    "dealType": "percentage",
+    "discountLabel": "50% off",
+    "cuisine": "asian",
+    "priceRange": "££",
+    "validDays": [
+      "everyday"
+    ],
+    "url": "https://www.phocafe.co.uk",
+    "location": "Jubilee Place, Canary Wharf",
+    "lat": 51.5042,
+    "lng": -0.0207,
+    "source": "scraped",
+    "imageEmoji": "🍲"
   },
   {
     "id": "fc-grind-7",
