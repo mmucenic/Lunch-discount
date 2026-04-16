@@ -1,22 +1,5 @@
 [
   {
-    "id": "bsky-at---did-plc-255mnfwdshslqtawmd6msqwb-app-bsky-feed-post-3m7cx2wca6t2b",
-    "restaurant": "MyLondon",
-    "tagline": "This family-run Ukrainian food truck brings comfort food, community spirit and u",
-    "description": "This family-run Ukrainian food truck brings comfort food, community spirit and unbeatable prices to Canary Wharf",
-    "dealType": "percentage",
-    "discountLabel": "Deal on Bluesky",
-    "cuisine": "other",
-    "priceRange": "££",
-    "validDays": [
-      "everyday"
-    ],
-    "url": "https://bsky.app/profile/itsmylondon.bsky.social/post/3m7cx2wca6t2b",
-    "location": "Canary Wharf",
-    "source": "scraped",
-    "imageEmoji": "🦋"
-  },
-  {
     "id": "fc-pho-4",
     "restaurant": "Pho",
     "tagline": "Search for your nearest Pho",
