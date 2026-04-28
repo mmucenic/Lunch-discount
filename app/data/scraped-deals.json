@@ -17,6 +17,25 @@
     "imageEmoji": "🦋"
   },
   {
+    "id": "fc-mama-li-1",
+    "restaurant": "Mama Li",
+    "tagline": "uk 2026 Mama LiWebsite by LoyaltyApps Close Menu Order Menu About Locations",
+    "description": "Download the app or collect stamps to earn free items and exclusive rewards.",
+    "dealType": "percentage",
+    "discountLabel": "Loyalty rewards",
+    "cuisine": "asian",
+    "priceRange": "£",
+    "validDays": [
+      "everyday"
+    ],
+    "url": "https://mamali.co.uk",
+    "location": "Water St, Wood Wharf",
+    "lat": 51.5023,
+    "lng": -0.0161,
+    "source": "scraped",
+    "imageEmoji": "🍜"
+  },
+  {
     "id": "fc-pho-4",
     "restaurant": "Pho",
     "tagline": "Search for your nearest Pho",
@@ -52,6 +71,25 @@
     "location": "Jubilee Place, Canary Wharf",
     "lat": 51.5042,
     "lng": -0.0207,
+    "source": "scraped",
+    "imageEmoji": "☕"
+  },
+  {
+    "id": "fc-watchhouse-21",
+    "restaurant": "Watchhouse",
+    "tagline": "Skip to content Visit us",
+    "description": "Download the app or collect stamps to earn free items and exclusive rewards.",
+    "dealType": "percentage",
+    "discountLabel": "Loyalty rewards",
+    "cuisine": "other",
+    "priceRange": "£",
+    "validDays": [
+      "everyday"
+    ],
+    "url": "https://www.watchhouse.com",
+    "location": "Canada Place, Canary Wharf",
+    "lat": 51.5049,
+    "lng": -0.0185,
     "source": "scraped",
     "imageEmoji": "☕"
   },
