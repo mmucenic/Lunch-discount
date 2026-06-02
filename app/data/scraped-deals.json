@@ -39,10 +39,10 @@
     "id": "fc-grind-7",
     "restaurant": "Grind",
     "tagline": "Grind Coffee | Buy Coffee Online UK For Delivery From Grind Your Cart Your cart ",
-    "description": "Get 25% off at this location.",
+    "description": "Get 15% off at this location.",
     "dealType": "percentage",
-    "discountLabel": "25% off",
-    "code": "STARTERUS",
+    "discountLabel": "15% off",
+    "code": "BIRTHDAY15",
     "cuisine": "british",
     "priceRange": "£",
     "validDays": [
