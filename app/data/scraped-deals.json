@@ -56,25 +56,6 @@
     "imageEmoji": "☕"
   },
   {
-    "id": "fc-watchhouse-21",
-    "restaurant": "Watchhouse",
-    "tagline": "Skip to content Merch",
-    "description": "Download the app or collect stamps to earn free items and exclusive rewards.",
-    "dealType": "percentage",
-    "discountLabel": "Loyalty rewards",
-    "cuisine": "other",
-    "priceRange": "£",
-    "validDays": [
-      "everyday"
-    ],
-    "url": "https://www.watchhouse.com",
-    "location": "Canada Place, Canary Wharf",
-    "lat": 51.5049,
-    "lng": -0.0185,
-    "source": "scraped",
-    "imageEmoji": "☕"
-  },
-  {
     "id": "fc-island-poke-22",
     "restaurant": "Island Poke",
     "tagline": "Our vibrant, fresh poké bowls are just the thing",
