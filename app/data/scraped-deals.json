@@ -17,26 +17,6 @@
     "imageEmoji": "🦋"
   },
   {
-    "id": "wl-3",
-    "restaurant": "Sea Lanes Canary Wharf",
-    "tagline": "Six-lane floating facility comes with saunas and an extensive outdoor bar and fo",
-    "description": "Six-lane floating facility comes with saunas and an extensive outdoor bar and food offering complete with weatherproof glazed igloos  Something big is happening at the western end of Eden Dock. Sea Lanes Canary Wharf officially opens to the public on Friday, June 19, 2026. The site features Continue",
-    "dealType": "percentage",
-    "discountLabel": "Special offer",
-    "cuisine": "other",
-    "priceRange": "££",
-    "validDays": [
-      "everyday"
-    ],
-    "validUntil": "2026-06-19T08:47:36.000Z",
-    "url": "https://wharf-life.com/interviews/sea-lanes-canary-wharf-opens-50m-swimming-pool-at-eden-dock/",
-    "location": "Canary Wharf",
-    "lat": 51.5051,
-    "lng": -0.0201,
-    "source": "scraped",
-    "imageEmoji": "🍻"
-  },
-  {
     "id": "fc-grind-7",
     "restaurant": "Grind",
     "tagline": "Grind Coffee | Buy Coffee Online UK For Delivery From Grind Your Cart Your cart ",
