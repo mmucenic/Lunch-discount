@@ -1,5 +1,22 @@
 [
   {
+    "id": "bsky-at---did-plc-bs7id6hrdx5kccadzpuut672-app-bsky-feed-post-3lkxgdy4xus25",
+    "restaurant": "Undervalued-Shares.com",
+    "tagline": "Once every decade (or two), the world's iconic cities offer you an outstanding i",
+    "description": "Once every decade (or two), the world's iconic cities offer you an outstanding investment opportunity in real estate.  If you missed buying into Canary Wharf in the 1990s, this one is for you 👇 www.undervalued-shares.com/reports/inve...",
+    "dealType": "percentage",
+    "discountLabel": "Deal on Bluesky",
+    "cuisine": "other",
+    "priceRange": "££",
+    "validDays": [
+      "everyday"
+    ],
+    "url": "https://bsky.app/profile/undervalued-shares.com/post/3lkxgdy4xus25",
+    "location": "Canary Wharf",
+    "source": "scraped",
+    "imageEmoji": "🦋"
+  },
+  {
     "id": "bsky-at---did-plc-255mnfwdshslqtawmd6msqwb-app-bsky-feed-post-3m7cx2wca6t2b",
     "restaurant": "MyLondon",
     "tagline": "This family-run Ukrainian food truck brings comfort food, community spirit and u",
@@ -12,6 +29,23 @@
       "everyday"
     ],
     "url": "https://bsky.app/profile/itsmylondon.bsky.social/post/3m7cx2wca6t2b",
+    "location": "Canary Wharf",
+    "source": "scraped",
+    "imageEmoji": "🦋"
+  },
+  {
+    "id": "bsky-at---did-plc-u2nhy3owxgxccowcg47dipra-app-bsky-feed-post-3lzg4hjku7a24",
+    "restaurant": "London Daily News",
+    "tagline": "Firetruck tour brings 1,000 free bowls of spicy chicken to Canary Wharf www.lond",
+    "description": "Firetruck tour brings 1,000 free bowls of spicy chicken to Canary Wharf www.londondaily.news/firetruck-to... #news #london #londonnews",
+    "dealType": "percentage",
+    "discountLabel": "free bowls",
+    "cuisine": "other",
+    "priceRange": "££",
+    "validDays": [
+      "everyday"
+    ],
+    "url": "https://bsky.app/profile/londondailynews.bsky.social/post/3lzg4hjku7a24",
     "location": "Canary Wharf",
     "source": "scraped",
     "imageEmoji": "🦋"
