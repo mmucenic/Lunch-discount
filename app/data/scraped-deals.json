@@ -106,11 +106,11 @@
   {
     "id": "fc-grind-7",
     "restaurant": "Grind",
-    "tagline": "A limited offer on your first 3 subscription orders",
-    "description": "Get 25% off at this location.",
+    "tagline": "40% OFF, then 20%, then 15% off your first 3 deliveries with code SAVEX3",
+    "description": "Get 40% off at this location.",
     "dealType": "percentage",
-    "discountLabel": "25% off",
-    "code": "STARTERUS",
+    "discountLabel": "40% off",
+    "code": "SAVEX3",
     "cuisine": "british",
     "priceRange": "£",
     "validDays": [
@@ -126,10 +126,10 @@
   {
     "id": "fc-watchhouse-21",
     "restaurant": "Watchhouse",
-    "tagline": "Skip to content Merch",
-    "description": "Download the app or collect stamps to earn free items and exclusive rewards.",
-    "dealType": "percentage",
-    "discountLabel": "Loyalty rewards",
+    "tagline": "Skip to content Subscribe & Save 10% with free UK shipping",
+    "description": "Set lunch menu available — see website for current pricing.",
+    "dealType": "setMenu",
+    "discountLabel": "From £18.00",
     "cuisine": "other",
     "priceRange": "£",
     "validDays": [
