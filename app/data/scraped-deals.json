@@ -106,11 +106,11 @@
   {
     "id": "fc-grind-7",
     "restaurant": "Grind",
-    "tagline": "Grind Coffee | Buy Coffee Online UK For Delivery From Grind NEW IN: The 2026 Chr",
+    "tagline": "Get started Grind at Work Shop All Make your kitchen your own personal Grind caf",
     "description": "Get 25% off at this location.",
     "dealType": "percentage",
     "discountLabel": "25% off",
-    "code": "GETSTARTED",
+    "code": "STARTERUS",
     "cuisine": "british",
     "priceRange": "£",
     "validDays": [
@@ -145,10 +145,10 @@
   {
     "id": "fc-watchhouse-21",
     "restaurant": "Watchhouse",
-    "tagline": "Skip to content Subscribe & Save 10% with free UK shipping",
-    "description": "Set lunch menu available — see website for current pricing.",
-    "dealType": "setMenu",
-    "discountLabel": "From £18.00",
+    "tagline": "Skip to content Merch",
+    "description": "Download the app or collect stamps to earn free items and exclusive rewards.",
+    "dealType": "percentage",
+    "discountLabel": "Loyalty rewards",
     "cuisine": "other",
     "priceRange": "£",
     "validDays": [
