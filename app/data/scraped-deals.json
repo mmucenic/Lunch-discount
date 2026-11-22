@@ -85,26 +85,6 @@
     "imageEmoji": "🦋"
   },
   {
-    "id": "wl-4",
-    "restaurant": "The Tinned Fish Market",
-    "tagline": "Specialising in tuna, sardines, anchovies and many more varieties of seafood, th",
-    "description": "Specialising in tuna, sardines, anchovies and many more varieties of seafood, the company has found a niche selling expertly preserved products  Regular visitors to Waitrose’s, admittedly small, canned fish section, will know that seafood in tins is having a bit of a moment. Whether it’s sardines be",
-    "dealType": "percentage",
-    "discountLabel": "Special offer",
-    "cuisine": "other",
-    "priceRange": "££",
-    "validDays": [
-      "everyday"
-    ],
-    "validUntil": "2026-11-21T18:48:51.000Z",
-    "url": "https://wharf-life.com/interviews/the-tinned-fish-market-opens-third-london-site-in-canary-wharf/",
-    "location": "Canary Wharf",
-    "lat": 51.5051,
-    "lng": -0.0201,
-    "source": "scraped",
-    "imageEmoji": "🍽️"
-  },
-  {
     "id": "fc-grind-7",
     "restaurant": "Grind",
     "tagline": "Get started Grind at Work Shop All Make your kitchen your own personal Grind caf",
