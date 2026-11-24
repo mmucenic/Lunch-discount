@@ -1,23 +1,5 @@
 [
   {
-    "id": "vc-7-1795472954027",
-    "restaurant": "Zizzi",
-    "tagline": "Buy 1 Main, Get 1 for £1 at  Zizzi",
-    "description": "Buy 1 Main, Get 1 for £1 at  Zizzi",
-    "dealType": "percentage",
-    "discountLabel": "Special offer",
-    "code": "voucher",
-    "cuisine": "other",
-    "priceRange": "££",
-    "validDays": [
-      "everyday"
-    ],
-    "url": "https://www.vouchercodes.co.uk/restaurant-vouchers.html",
-    "location": "Canary Wharf",
-    "source": "scraped",
-    "imageEmoji": "🎟️"
-  },
-  {
     "id": "bsky-at---did-plc-kw6nwhkguyj2lxczj7wimlnu-app-bsky-feed-post-3muw4kkdzsm2e",
     "restaurant": "London Food Briefly",
     "tagline": "Isso Prawn Crazy expands from a 16-seat Colombo prawn restaurant to multiple Sri",
