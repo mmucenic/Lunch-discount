@@ -124,6 +124,25 @@
     "imageEmoji": "☕"
   },
   {
+    "id": "fc-garbanzos-17",
+    "restaurant": "Garbanzos",
+    "tagline": "Choose what you love, mix and match your toppings, and make every meal your own",
+    "description": "Download the app or collect stamps to earn free items and exclusive rewards.",
+    "dealType": "percentage",
+    "discountLabel": "Loyalty rewards",
+    "cuisine": "mexican",
+    "priceRange": "£",
+    "validDays": [
+      "everyday"
+    ],
+    "url": "https://www.garbanzos.co.uk",
+    "location": "Cabot Place, Canary Wharf",
+    "lat": 51.5041,
+    "lng": -0.0199,
+    "source": "scraped",
+    "imageEmoji": "🫘"
+  },
+  {
     "id": "fc-watchhouse-21",
     "restaurant": "Watchhouse",
     "tagline": "Skip to content Merch",
